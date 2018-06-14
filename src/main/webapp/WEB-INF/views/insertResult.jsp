@@ -10,12 +10,12 @@
 <link href="css/commons.css" rel="stylesheet">
 </head>
 <body>
-<p>実行者：${fn:escapeXml(registerUserId)}</p>
+<%-- <p>実行者：${fn:escapeXml(registerUserId)}</p> --%>
 <p>正常に登録されました</p>
-<form action="select.jsp">
+<%-- <form action="select.jsp">
   <input type="hidden" name="id" value="${fn:escapeXml(registerUserId)}">
   <input type="submit" value="検索">
-</form>
+</form> --%>
 <div>
   <a href="menu.jsp">メニューに戻る</a>
 </div>

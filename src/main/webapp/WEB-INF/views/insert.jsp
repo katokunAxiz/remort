@@ -18,8 +18,7 @@
   <p class="error">${fn:escapeXml(errmsg)}</p>
 </c:if> --%>
 
-<%System.out.println("Qtest"); %>
-<form:form action="insert" method="post">
+<form:form action="insertConfirm" method="post">
   <fieldset class="label-60">
     <div>
       <label class="required">名前</label><input type="text" name="name" value="${fn:escapeXml(registerUser.name)}">

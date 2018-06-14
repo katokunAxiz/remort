@@ -6,13 +6,16 @@ import org.springframework.stereotype.Repository;
 
 import jp.co.example.dao.UserDao;
 
+
 @Repository
 public class PgUserDao implements UserDao{
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
-	public int Insert(){
-		return jdbcTemplate.update("INSERT INTO user_info (user_name, telephone, password) VALUES (?, ?, ?)");
-		/*		new BeanPropertyRowMapper <UserInfo> (UserInfo.class));*/
+	public int register(String name,String tel,String pass){
+		String sql = "INSERT INTO user_info(user_name,telephone,password)VALUES (?, ?, ?)";
+
+		return jdbcTemplate.update(sql,name,tel,pass);
+
 	}
 }

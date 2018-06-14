@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <title>登録確認画面</title>
 <link href="css/commons.css" rel="stylesheet">
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 </head>
 <body>
 <p>これでよろしいですか？</p>
@@ -16,7 +17,7 @@
   <p class="error">${fn:escapeXml(errmsg)}</p>
 </c:if>
 
-<form action="insertConfirm" method="post">
+<form:form action="insert" method="post">
   <fieldset class="label-110">
     <div>
       <label>名前</label><input type="text" name="name" value="${name}" readonly>
@@ -32,7 +33,7 @@
     <input type="submit" name="button" value="登録">
     <input type="submit" name="button" value="戻る" onclick="location.href='insert.jsp'; return false;">
   </div>
-</form>
+</form:form>
 <div>
   <a href="menu.jsp">メニューに戻る</a>
 </div>

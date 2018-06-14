@@ -1,5 +1,7 @@
 package jp.co.example.service;
 
 public interface InsertService {
-	public int insert();
+
+	public int register(String name,String tel,String pass);
+
 }

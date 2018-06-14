@@ -1,27 +1,17 @@
 package jp.co.example.form;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class UserInfo {
-	private Integer userId;
+
 	private String userName;
 	private String telephone;
 	private String password;
 
-	public UserInfo(Integer userId, String userName, String telephone, String password) {
-		super();
-		this.userId = userId;
-		this.userName = userName;
-		this.telephone = telephone;
-		this.password = password;
-	}
 
 
-	public Integer getUserId() {
-		return userId;
-	}
 
-	public void setUserId(Integer userId) {
-		this.userId = userId;
-	}
 
 	public String getUserName() {
 		return userName;

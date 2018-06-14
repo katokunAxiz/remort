@@ -22,19 +22,19 @@ public class InsertController {
 	public String form() {
 
 
-		return "insertConfirm";
+		return "insert";
 	}
 
-	@RequestMapping( value="/insert",method=RequestMethod.GET)
-	public String form2(@RequestParam("name") String data,
+	@RequestMapping( value="/insert",method=RequestMethod.POST)
+	public String form2(@RequestParam("name") String name,
 						@RequestParam("tel") String tel,
 						@RequestParam("pass") String pass,
 
 						Model model) {
 
 
-		model.addAttribute("name", "name");
-		model.addAttribute("tel","tel");
+		model.addAttribute("name", name);
+		model.addAttribute("tel",tel);
 		model.addAttribute("pass","pass");
 //		userInfo.setPassword(pass);
 

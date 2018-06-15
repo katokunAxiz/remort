@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import jp.co.example.form.UserInfo;
-import jp.co.example.service.InsertService;
+import jp.co.example.service.UserService;
 //import jp.co.example.service.InsertService;
 
 @Controller
@@ -17,7 +17,7 @@ public class InsertController {
 	@Autowired
 	private UserInfo userInfo;
 	@Autowired
-	private InsertService insertService;
+	private UserService userService;
 
 	@RequestMapping("/insert")
 	public String form() {
@@ -49,7 +49,7 @@ public class InsertController {
 			Model model) {
 		if (rePass.equals(userInfo.getPassword())) {
 			System.out.println(userInfo.getPassword());
-			int i = insertService.register(userInfo.getUserName(),userInfo.getTelephone(),userInfo.getPassword());
+			userService.register(userInfo.getUserName(),userInfo.getTelephone(),userInfo.getPassword());
 
 			return "insertResult";
 		} else {

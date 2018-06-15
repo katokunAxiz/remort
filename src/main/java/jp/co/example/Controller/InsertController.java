@@ -32,16 +32,17 @@ public class InsertController {
 
 			Model model) {
 
-		/*model.addAttribute("pass",pass);*/
-		userInfo.setUserName(name);
-		userInfo.setTelephone(tel);
-		userInfo.setPassword(pass);
+		if (name == null || name.isEmpty() || tel == null || tel.isEmpty() || pass == null || pass.isEmpty()) {
+			return "insert";
+		} else {
 
-		//HttpSession session =
-
-		model.addAttribute("name", name);
-		model.addAttribute("tel", tel);
-		return "insertConfirm";
+			userInfo.setUserName(name);
+			userInfo.setTelephone(tel);
+			userInfo.setPassword(pass);
+			model.addAttribute("name", name);
+			model.addAttribute("tel", tel);
+			return "insertConfirm";
+		}
 	}
 
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)
@@ -49,7 +50,7 @@ public class InsertController {
 			Model model) {
 		if (rePass.equals(userInfo.getPassword())) {
 			System.out.println(userInfo.getPassword());
-			userService.register(userInfo.getUserName(),userInfo.getTelephone(),userInfo.getPassword());
+			userService.register(userInfo.getUserName(), userInfo.getTelephone(), userInfo.getPassword());
 
 			return "insertResult";
 		} else {
